@@ -1,0 +1,15 @@
+.row.mt-4
+  .col-8
+    %p#notice= notice
+    %h1 Listing Authors
+    - @authors.each do |author|
+      .card.my-2
+        .card-body
+          %h5.card-title= author.name
+          %p.card-text= author.age
+          = link_to 'Show', author_path(author), class: 'card-link'
+          = link_to 'Edit', edit_author_path(author), class: 'card-link'
+          = link_to 'Destroy', author_path(author), method: :delete, data: { confirm: 'Are you sure?' }, class: 'card-link'
+    %br/
+    = link_to 'New Post', new_author_path, class: 'btn btn-primary'
+

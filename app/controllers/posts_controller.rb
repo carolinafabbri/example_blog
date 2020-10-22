@@ -16,11 +16,6 @@ class PostsController < ApplicationController
     @post = Post.new
   end
 
-  # GET /posts/1/edit
-  def edit
-    @post = Post.find(params[:id])
-  end
-
   # POST /posts
   # POST /posts.json
   def create
@@ -35,6 +30,11 @@ class PostsController < ApplicationController
         format.json { render json: @post.errors, status: :unprocessable_entity }
       end
     end
+  end
+
+  # GET /posts/1/edit
+  def edit
+    @post = Post.find(params[:id])
   end
 
   # PATCH/PUT /posts/1

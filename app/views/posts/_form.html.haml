@@ -15,5 +15,6 @@
     = f.label :body
     %br/
     = f.text_area :body, class: 'form-control'
+    = f.hidden_field :author_id, value: 1
   .actions
     = f.submit 'Submit', class: 'btn btn-primary'
